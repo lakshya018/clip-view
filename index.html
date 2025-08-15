@@ -308,10 +308,10 @@
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg'), antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 800;
+        const particlesCount = 500;
         const posArray = new Float32Array(particlesCount * 3);
 
         for (let i = 0; i < particlesCount * 3; i++) {
