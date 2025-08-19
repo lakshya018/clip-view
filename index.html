@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/image.png" />
     <title>ClipView – Free Clipboard History Manager for macOS</title>
-    <meta name="description" content="ClipView is a free clipboard history manager for macOS. Save, search, and paste your clipboard history with ease. Minimal, fast, and elegant clipboard tool for productivity.">
-    <meta name="keywords" content="clipboard history, clipboard manager, clipboard tool, paste manager, Mac clipboard history, Windows clipboard history, productivity, menu bar app, macOS clipboard, clipboard utility">
+    <meta name="description"
+        content="ClipView is a free clipboard history manager for macOS. Save, search, and paste your clipboard history with ease. Minimal, fast, and elegant clipboard tool for productivity.">
+    <meta name="keywords"
+        content="clipboard history, clipboard manager, clipboard tool, paste manager, Mac clipboard history, Windows clipboard history, productivity, menu bar app, macOS clipboard, clipboard utility">
     <meta name="author" content="Lakshya Soni">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lakshya018.github.io/clip-view/">
     <meta property="og:title" content="ClipView – Free Clipboard History Manager for macOS" />
-    <meta property="og:description" content="Free clipboard history manager for Mac. Store, search, and paste your clipboard history instantly. Minimal, fast, and elegant." />
+    <meta property="og:description"
+        content="Free clipboard history manager for Mac. Store, search, and paste your clipboard history instantly. Minimal, fast, and elegant." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lakshya018.github.io/clip-view/" />
     <meta property="og:image" content="https://lakshya018.github.io/clip-view/image.png" />
     <meta property="og:site_name" content="ClipView" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ClipView – Free Clipboard History Manager for macOS" />
-    <meta name="twitter:description" content="Free clipboard history manager for Mac. Store, search, and paste your clipboard history instantly. Minimal, fast, and elegant." />
+    <meta name="twitter:description"
+        content="Free clipboard history manager for Mac. Store, search, and paste your clipboard history instantly. Minimal, fast, and elegant." />
     <meta name="twitter:image" content="https://lakshya018.github.io/clip-view/image.png" />
     <meta name="twitter:site" content="@lakshya018" />
     <meta name="google-site-verification" content="TaavvhrgC3gGHtjsz82iyFmOZlwgCO9e6mvWj73jie4" />
@@ -35,51 +39,68 @@
     <canvas id="bg" class="fixed top-0 left-0 w-full h-full -z-10" aria-hidden="true"></canvas>
 
     <main class="flex flex-col justify-center items-center min-h-screen px-4" role="main">
-        <section class="bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl max-w-2xl w-full mx-auto p-12 md:p-8 sm:p-4 animate-fadeIn" aria-label="Clipboard Manager Features">
-            <h1 class="text-4xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-cyan-500 to-teal-300 bg-clip-text text-transparent" tabindex="0">ClipView</h1>
-            <p class="text-lg md:text-base text-gray-200 mb-6" tabindex="0">A minimal, fast, and elegant Clipboard History Manager for macOS menu bar.</p>
+        <section
+            class="bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl max-w-2xl w-full mx-auto p-12 md:p-8 sm:p-4 animate-fadeIn"
+            aria-label="Clipboard Manager Features">
+            <h1 class="text-4xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-cyan-500 to-teal-300 bg-clip-text text-transparent"
+                tabindex="0">ClipView</h1>
+            <p class="text-lg md:text-base text-gray-200 mb-6" tabindex="0">A minimal, fast, and elegant Clipboard
+                History Manager for macOS menu bar.</p>
 
             <div class="grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-8">
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Clipboard History">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    tabindex="0" aria-label="Clipboard History">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                        aria-hidden="true">
                         <i class="uil uil-clipboard"></i>
                     </span>
                     <span class="font-semibold text-base mb-1 text-white">Clipboard History</span>
-                    <span class="text-sm text-gray-300 text-center">Stores your last 20 clipboard items so you can easily reuse them anytime.</span>
+                    <span class="text-sm text-gray-300 text-center">Stores your last 20 clipboard items so you can
+                        easily reuse them anytime.</span>
                 </div>
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Delete Items">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    tabindex="0" aria-label="Delete Items">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                        aria-hidden="true">
                         <i class="uil uil-trash"></i>
                     </span>
                     <span class="font-semibold text-base mb-1 text-white">Delete Items</span>
-                    <span class="text-sm text-gray-300 text-center">Remove unwanted items instantly with one click.</span>
+                    <span class="text-sm text-gray-300 text-center">Remove unwanted items instantly with one
+                        click.</span>
                 </div>
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Menu Bar Access">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    tabindex="0" aria-label="Menu Bar Access">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                        aria-hidden="true">
                         <i class="uil uil-bars"></i>
                     </span>
                     <span class="font-semibold text-base mb-1 text-white">Menu Bar Access</span>
-                    <span class="text-sm text-gray-300 text-center">Quick access from the macOS menu bar without Dock clutter.</span>
+                    <span class="text-sm text-gray-300 text-center">Quick access from the macOS menu bar without Dock
+                        clutter.</span>
                 </div>
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Shortcut Launch">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    tabindex="0" aria-label="Shortcut Launch">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                        aria-hidden="true">
                         <i class="uil uil-keyboard"></i>
                     </span>
                     <span class="font-semibold text-base mb-1 text-white">Shortcut Launch</span>
                     <span class="text-sm text-gray-300 text-center">
                         Open ClipView instantly using
-                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs" aria-label="Option key">Option</span>
+                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs"
+                            aria-label="Option key">Option</span>
                         +
-                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs" aria-label="Space key">Space</span>
+                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs"
+                            aria-label="Space key">Space</span>
                     </span>
                 </div>
             </div>
 
             <a href="ClipView.dmg"
                 class="flex items-center justify-center gap-3 bg-black text-white font-semibold text-xl md:text-lg px-10 py-4 rounded-[2rem] shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 mb-2 w-full max-w-md mx-auto focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                style="box-shadow: 0 8px 32px rgba(0,0,0,0.18);"
-                aria-label="Download ClipView for macOS">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 30 30" class="w-8 h-8 mr-2" aria-hidden="true" focusable="false">
+                style="box-shadow: 0 8px 32px rgba(0,0,0,0.18);" aria-label="Download ClipView for macOS">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 30 30" class="w-8 h-8 mr-2"
+                    aria-hidden="true" focusable="false">
                     <title>Apple Logo</title>
                     <path
                         d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z">
@@ -99,7 +120,7 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 250; // reduce for performance
+        const particlesCount = 250; // reduce for performance
         const posArray = new Float32Array(particlesCount * 3);
 
         for (let i = 0; i < particlesCount * 3; i++) {
@@ -133,3 +154,6 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
     </script>
+</body>
+
+</html>
