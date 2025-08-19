@@ -1,7 +1,5 @@
 # ClipView – Free Clipboard History Manager for macOS
 
-![ClipView Banner](https://lakshya018.github.io/clip-view/image.png)
-
 ## 🚀 Overview
 
 **ClipView** is a free, minimal, and elegant clipboard history manager for macOS. Designed for productivity, ClipView lets you store, search, and paste your last 20 clipboard items instantly from the macOS menu bar. No Dock clutter, no distractions—just fast access to your clipboard history.
@@ -22,22 +20,6 @@
 ## 📦 Download & Install
 
 - [Download ClipView for macOS (.dmg)](https://lakshya018.github.io/clip-view/ClipView.dmg)
-- Drag the app to your Applications folder.
-- Launch ClipView from the menu bar.
-
----
-
-## 🖥️ Screenshots
-
-![ClipView UI](https://lakshya018.github.io/clip-view/clipview-og.png)
-
----
-
-## 🔍 SEO Keywords
-
-```
-clipboard history, clipboard manager, macOS clipboard, paste manager, productivity app, menu bar clipboard, clipboard utility, free clipboard manager, clipboard history mac, clipboard tool mac, clipboard app mac, clipboard search, clipboard privacy
-```
 
 ---
 
@@ -56,54 +38,6 @@ clipboard history, clipboard manager, macOS clipboard, paste manager, productivi
 2. **Click the ClipView icon** in the menu bar to view your clipboard history.
 3. **Select an item** to copy it again, or delete items you no longer need.
 4. **Use the shortcut** <kbd>Option</kbd> + <kbd>Space</kbd> for instant access.
-
----
-
-## 📚 Documentation
-
-- [Website & Demo](https://lakshya018.github.io/clip-view/)
-- [FAQ](#)
-- [Support](mailto:lakshyasoni018@gmail.com)
-
----
-
-## 🧑‍💻 Contributing
-
-Pull requests, issues, and suggestions are welcome! Please open an issue or submit a PR to help improve ClipView.
-
----
-
-## 📄 License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## ⭐ Star & Share
-
-If you find ClipView useful, please star this repo and share it with others!
-
----
-
-## 📱 Social & Contact
-
-- [Twitter](https://twitter.com/lakshya018)
-- [LinkedIn](https://linkedin.com/in/lakshya018)
-- [Email](mailto:lakshyasoni018@gmail.com)
-
----
-
-## 🏷️ Tags
-
-`clipboard` `macos` `productivity` `menu-bar` `history` `free` `open-source` `clipboard-manager` `minimal` `privacy`
-
----
-
-## 📈 SEO Tips
-
-- Add a valid `og:image` and `twitter:image` to your site for better social sharing.
-- Use relevant keywords in your repo description and README.
-- Keep your documentation clear and up-to-date.
 
 ---
 
