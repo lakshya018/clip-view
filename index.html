@@ -111,49 +111,55 @@
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg'), antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        <script>
+            // Only run three.js animation on desktop (width >= 768px)
+            if (window.innerWidth >= 768) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js';
+                script.onload = function() {
+                    const scene = new THREE.Scene();
+                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg'), antialias: true });
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 250; // reduce for performance
-        const posArray = new Float32Array(particlesCount * 3);
+                    const particlesGeometry = new THREE.BufferGeometry();
+                    const particlesCount = 250;
+                    const posArray = new Float32Array(particlesCount * 3);
+                    for (let i = 0; i < particlesCount * 3; i++) {
+                        posArray[i] = (Math.random() - 0.5) * 10;
+                    }
+                    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-        for (let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 10;
-        }
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                    const particlesMaterial = new THREE.PointsMaterial({
+                        size: 0.05,
+                        color: '#00adb5',
+                        transparent: true,
+                        opacity: 0.8
+                    });
 
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.05,
-            color: '#00adb5',
-            transparent: true,
-            opacity: 0.8
-        });
+                    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+                    scene.add(particlesMesh);
 
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
+                    camera.position.z = 3;
 
-        camera.position.z = 3;
+                    function animate() {
+                        requestAnimationFrame(animate);
+                        particlesMesh.rotation.y += 0.0006;
+                        particlesMesh.rotation.x += 0.0003;
+                        renderer.render(scene, camera);
+                    }
+                    animate();
 
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.0006;
-            particlesMesh.rotation.x += 0.0003;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
+                    window.addEventListener('resize', () => {
+                        camera.aspect = window.innerWidth / window.innerHeight;
+                        camera.updateProjectionMatrix();
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    });
+                };
+                document.body.appendChild(script);
+            }
+        </script>
 </body>
 
 </html>
