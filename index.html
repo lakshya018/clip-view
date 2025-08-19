@@ -4,305 +4,91 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="TaavvhrgC3gGHtjsz82iyFmOZlwgCO9e6mvWj73jie4" />
+    <link rel="icon" type="image/x-icon" href="/image.png" />
     <title>ClipView – Free Clipboard History Manager for macOS</title>
-<meta name="description" content="ClipView is a free clipboard history manager for macOS. Save, search, and paste your clipboard history with ease. Minimal, fast, and elegant.">
-
+    <meta name="description" content="ClipView is a free clipboard history manager for macOS. Save, search, and paste your clipboard history with ease. Minimal, fast, and elegant clipboard tool for productivity.">
+    <meta name="keywords" content="clipboard history, clipboard manager, clipboard tool, paste manager, Mac clipboard history, Windows clipboard history, productivity, menu bar app, macOS clipboard, clipboard utility">
+    <meta name="author" content="Lakshya Soni">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lakshya018.github.io/clip-view/">
+    <meta property="og:title" content="ClipView – Free Clipboard History Manager for macOS" />
+    <meta property="og:description" content="Free clipboard history manager for Mac. Store, search, and paste your clipboard history instantly. Minimal, fast, and elegant." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lakshya018.github.io/clip-view/" />
+    <meta property="og:image" content="https://lakshya018.github.io/clip-view/image.png" />
+    <meta property="og:site_name" content="ClipView" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ClipView – Free Clipboard History Manager for macOS" />
+    <meta name="twitter:description" content="Free clipboard history manager for Mac. Store, search, and paste your clipboard history instantly. Minimal, fast, and elegant." />
+    <meta name="twitter:image" content="https://lakshya018.github.io/clip-view/image.png" />
+    <meta name="twitter:site" content="@lakshya018" />
+    <meta name="google-site-verification" content="TaavvhrgC3gGHtjsz82iyFmOZlwgCO9e6mvWj73jie4" />
+    <link rel="preconnect" href="https://unicons.iconscout.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
-    
-<meta name="keywords" content="clipboard history, clipboard manager, clipboard tool, paste manager, Mac clipboard history, Windows clipboard history">
-<meta name="author" content="Lakshya Soni">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://lakshya018.github.io/clip-view/">
-<meta property="og:title" content="Clipboard History Manager">
-<meta property="og:description" content="Free clipboard history manager for Mac & Windows. Store, search, and paste your clipboard history instantly.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lakshya018.github.io/clip-view/">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            font-family: 'Inter', sans-serif;
-            color: white;
-            /* Allow scrolling on mobile */
-        }
-
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .container {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .glass-box {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px 50px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        @media (max-width: 900px) {
-            .glass-box {
-                padding: 30px 18px;
-                max-width: 98vw;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .glass-box {
-                padding: 18px 4vw;
-                border-radius: 14px;
-            }
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #00adb5, #00ffe0);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.1rem;
-            }
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #ddd;
-        }
-
-        @media (max-width: 600px) {
-            p {
-                font-size: 1rem;
-            }
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 900px) {
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .features {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 15px;
-            padding: 10px 20px;
-            transition: transform 0.2s ease, background 0.3s ease;
-            /* Let grid control sizing and spacing */
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2.1rem;
-            margin-bottom: 10px;
-            color: #00adb5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .feature-title {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 6px;
-            color: #fff;
-        }
-
-        .feature-desc {
-            font-size: 0.8rem;
-            color: #ccc;
-            line-height: 1.4;
-        }
-
-        .shortcut {
-            display: inline-block;
-            padding: 4px 8px;
-            margin: 2px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.15);
-            font-family: monospace;
-            font-size: 0.8rem;
-        }
-
-        .download-btn {
-            background: linear-gradient(90deg, #00adb5, #008891, #00c8d3);
-            background-size: 300% 300%;
-            animation: gradientShift 6s ease infinite;
-            color: white;
-            text-decoration: none;
-            padding: 16px 48px;
-            border-radius: 32px;
-            font-size: 1.25rem;
-            font-weight: bold;
-            box-shadow: 0 4px 20px rgba(0, 173, 181, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6em;
-            letter-spacing: 0.02em;
-        }
-
-        .download-btn i {
-            font-size: 2rem;
-        }
-
-        .download-btn::before {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 0.2em;
-        }
-
-        @media (max-width: 600px) {
-            .download-btn {
-                padding: 12px 8vw;
-                font-size: 1.05rem;
-                border-radius: 22px;
-                gap: 0.5em;
-            }
-
-            .download-btn::before {
-                font-size: 1.1em;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .download-btn {
-                padding: 10px 2vw;
-                font-size: 0.95rem;
-            }
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(0, 173, 181, 0.6);
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-black min-h-screen font-sans text-white relative overflow-x-hidden">
 
-    <canvas id="bg"></canvas>
+    <canvas id="bg" class="fixed top-0 left-0 w-full h-full -z-10" aria-hidden="true"></canvas>
 
-    <div class="container">
-        <div class="glass-box">
-            <h1>ClipView</h1>
-            <p>A minimal, fast, and elegant Clipboard History Manager for macOS menu bar.</p>
+    <main class="flex flex-col justify-center items-center min-h-screen px-4" role="main">
+        <section class="bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl max-w-2xl w-full mx-auto p-12 md:p-8 sm:p-4 animate-fadeIn" aria-label="Clipboard Manager Features">
+            <h1 class="text-4xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-cyan-500 to-teal-300 bg-clip-text text-transparent" tabindex="0">ClipView</h1>
+            <p class="text-lg md:text-base text-gray-200 mb-6" tabindex="0">A minimal, fast, and elegant Clipboard History Manager for macOS menu bar.</p>
 
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="uil uil-clipboard"></i></div>
-                    <div class="feature-title">Clipboard History</div>
-                    <div class="feature-desc">Stores your last 20 clipboard items so you can easily reuse them anytime.
-                    </div>
+            <div class="grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-8">
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Clipboard History">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                        <i class="uil uil-clipboard"></i>
+                    </span>
+                    <span class="font-semibold text-base mb-1 text-white">Clipboard History</span>
+                    <span class="text-sm text-gray-300 text-center">Stores your last 20 clipboard items so you can easily reuse them anytime.</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="uil uil-trash"></i></div>
-                    <div class="feature-title">Delete Items</div>
-                    <div class="feature-desc">Remove unwanted items instantly with one click.</div>
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Delete Items">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                        <i class="uil uil-trash"></i>
+                    </span>
+                    <span class="font-semibold text-base mb-1 text-white">Delete Items</span>
+                    <span class="text-sm text-gray-300 text-center">Remove unwanted items instantly with one click.</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="uil uil-bars"></i></div>
-                    <div class="feature-title">Menu Bar Access</div>
-                    <div class="feature-desc">Quick access from the macOS menu bar without Dock clutter.</div>
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Menu Bar Access">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                        <i class="uil uil-bars"></i>
+                    </span>
+                    <span class="font-semibold text-base mb-1 text-white">Menu Bar Access</span>
+                    <span class="text-sm text-gray-300 text-center">Quick access from the macOS menu bar without Dock clutter.</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="uil uil-keyboard"></i></div>
-                    <div class="feature-title">Shortcut Launch</div>
-                    <div class="feature-desc">Open ClipView instantly using <span class="shortcut">Option</span> + <span
-                            class="shortcut">Space</span></div>
+                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400" tabindex="0" aria-label="Shortcut Launch">
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl" aria-hidden="true">
+                        <i class="uil uil-keyboard"></i>
+                    </span>
+                    <span class="font-semibold text-base mb-1 text-white">Shortcut Launch</span>
+                    <span class="text-sm text-gray-300 text-center">
+                        Open ClipView instantly using
+                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs" aria-label="Option key">Option</span>
+                        +
+                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs" aria-label="Space key">Space</span>
+                    </span>
                 </div>
             </div>
 
-            <a href="ClipView.dmg" class="download-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" fill="white"
-                    viewBox="0 0 30 30">
+            <a href="ClipView.dmg"
+                class="flex items-center justify-center gap-3 bg-black text-white font-semibold text-xl md:text-lg px-10 py-4 rounded-[2rem] shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 mb-2 w-full max-w-md mx-auto focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                style="box-shadow: 0 8px 32px rgba(0,0,0,0.18);"
+                aria-label="Download ClipView for macOS">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 30 30" class="w-8 h-8 mr-2" aria-hidden="true" focusable="false">
+                    <title>Apple Logo</title>
                     <path
                         d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z">
                     </path>
                 </svg>
-                Download for macOS</a>
-        </div>
-    </div>
+                Download for macOS
+            </a>
+        </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
     <script>
@@ -313,11 +99,11 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 500;
+    const particlesCount = 250; // reduce for performance
         const posArray = new Float32Array(particlesCount * 3);
 
         for (let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 12;
+            posArray[i] = (Math.random() - 0.5) * 10;
         }
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
@@ -347,7 +133,3 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
     </script>
-
-</body>
-
-</html>
