@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/image.png" />
+    <link rel="icon" type="image/x-icon" href="image.png" />
     <title>ClipView – Free Clipboard History Manager for macOS</title>
     <meta name="description"
         content="ClipView is a free clipboard history manager for macOS. Save, search, and paste your clipboard history with ease. Minimal, fast, and elegant clipboard tool for productivity.">
@@ -38,68 +38,68 @@
 
     <canvas id="bg" class="fixed top-0 left-0 w-full h-full -z-10" aria-hidden="true"></canvas>
 
-    <main class="flex flex-col justify-center items-center min-h-screen px-4" role="main">
+    <main class="flex flex-col justify-center items-center min-h-screen px-2 sm:px-4" role="main">
         <section
-            class="bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl max-w-2xl w-full mx-auto p-12 md:p-8 sm:p-4 animate-fadeIn"
+            class="bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl max-w-2xl w-full mx-auto p-8 sm:p-6 xs:p-3 animate-fadeIn"
             aria-label="Clipboard Manager Features">
-            <h1 class="text-4xl md:text-3xl text-center font-bold mb-2 bg-gradient-to-r from-cyan-500 to-teal-300 bg-clip-text text-transparent"
+            <h1 class="text-4xl md:text-3xl sm:text-2xl xs:text-xl text-center font-bold mb-2 bg-gradient-to-r from-cyan-500 to-teal-300 bg-clip-text text-transparent"
                 tabindex="0">ClipView</h1>
-            <p class="text-lg md:text-base text-gray-200 mb-6" tabindex="0">A minimal, fast, and elegant Clipboard
+            <p class="text-lg md:text-base sm:text-sm xs:text-xs text-gray-200 mb-6" tabindex="0">A minimal, fast, and elegant Clipboard
                 History Manager for macOS menu bar.</p>
 
-            <div class="grid grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-8">
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            <div class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-5 sm:gap-4 xs:gap-3 mb-8">
+                <div class="bg-white/10 rounded-xl p-5 sm:p-4 xs:p-3 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                     tabindex="0" aria-label="Clipboard History">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl sm:text-2xl xs:text-xl"
                         aria-hidden="true">
                         <i class="uil uil-clipboard"></i>
                     </span>
-                    <span class="font-semibold text-base mb-1 text-white">Clipboard History</span>
-                    <span class="text-sm text-gray-300 text-center">Stores your last 20 clipboard items so you can
+                    <span class="font-semibold text-base sm:text-sm xs:text-xs mb-1 text-white">Clipboard History</span>
+                    <span class="text-sm sm:text-xs xs:text-[10px] text-gray-300 text-center">Stores your last 20 clipboard items so you can
                         easily reuse them anytime.</span>
                 </div>
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                <div class="bg-white/10 rounded-xl p-5 sm:p-4 xs:p-3 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                     tabindex="0" aria-label="Delete Items">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl sm:text-2xl xs:text-xl"
                         aria-hidden="true">
                         <i class="uil uil-trash"></i>
                     </span>
-                    <span class="font-semibold text-base mb-1 text-white">Delete Items</span>
-                    <span class="text-sm text-gray-300 text-center">Remove unwanted items instantly with one
+                    <span class="font-semibold text-base sm:text-sm xs:text-xs mb-1 text-white">Delete Items</span>
+                    <span class="text-sm sm:text-xs xs:text-[10px] text-gray-300 text-center">Remove unwanted items instantly with one
                         click.</span>
                 </div>
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                <div class="bg-white/10 rounded-xl p-5 sm:p-4 xs:p-3 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                     tabindex="0" aria-label="Menu Bar Access">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl sm:text-2xl xs:text-xl"
                         aria-hidden="true">
                         <i class="uil uil-bars"></i>
                     </span>
-                    <span class="font-semibold text-base mb-1 text-white">Menu Bar Access</span>
-                    <span class="text-sm text-gray-300 text-center">Quick access from the macOS menu bar without Dock
+                    <span class="font-semibold text-base sm:text-sm xs:text-xs mb-1 text-white">Menu Bar Access</span>
+                    <span class="text-sm sm:text-xs xs:text-[10px] text-gray-300 text-center">Quick access from the macOS menu bar without Dock
                         clutter.</span>
                 </div>
-                <div class="bg-white/10 rounded-xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                <div class="bg-white/10 rounded-xl p-5 sm:p-4 xs:p-3 flex flex-col items-center transition hover:-translate-y-1 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                     tabindex="0" aria-label="Shortcut Launch">
-                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl"
+                    <span class="feature-icon mb-2 text-cyan-400 flex items-center justify-center text-3xl sm:text-2xl xs:text-xl"
                         aria-hidden="true">
                         <i class="uil uil-keyboard"></i>
                     </span>
-                    <span class="font-semibold text-base mb-1 text-white">Shortcut Launch</span>
-                    <span class="text-sm text-gray-300 text-center">
+                    <span class="font-semibold text-base sm:text-sm xs:text-xs mb-1 text-white">Shortcut Launch</span>
+                    <span class="text-sm sm:text-xs xs:text-[10px] text-gray-300 text-center">
                         Open ClipView instantly using
-                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs"
+                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs sm:text-[11px] xs:text-[9px]"
                             aria-label="Option key">Option</span>
                         +
-                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs"
+                        <span class="inline-block px-2 py-1 mx-1 rounded bg-white/15 font-mono text-xs sm:text-[11px] xs:text-[9px]"
                             aria-label="Space key">Space</span>
                     </span>
                 </div>
             </div>
 
             <a href="ClipView.dmg"
-                class="flex items-center justify-center gap-3 bg-cyan-600 text-white font-semibold text-xl md:text-lg px-10 py-4 rounded-[2rem] shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 mb-2 w-full max-w-md mx-auto focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                class="flex items-center justify-center gap-3 bg-cyan-600 text-white font-semibold text-sm md:text-lg sm:text-base xs:text-sm px-6 sm:px-6 xs:px-4 py-4 sm:py-3 xs:py-2 rounded-[2rem] shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 mb-2 w-full max-w-md mx-auto focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 style="box-shadow: 0 8px 32px rgba(0,0,0,0.18);" aria-label="Download ClipView for macOS">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 30 30" class="w-8 h-8 mr-2"
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 30 30" class="w-8 h-8 sm:w-7 sm:h-7 xs:w-6 xs:h-6 mr-2"
                     aria-hidden="true" focusable="false">
                     <title>Apple Logo</title>
                     <path
