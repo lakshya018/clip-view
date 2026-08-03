@@ -1,9 +1,0 @@
-#!/bin/sh
-
-APP="/Applications/ClipView.app"
-
-if [ -d "$APP" ]; then
-    xattr -cr "$APP"
-fi
-
-exit 0

@@ -108,6 +108,23 @@
                 </svg>
                 Download for macOS
             </a>
+
+            <div class="mt-5 rounded-2xl border border-cyan-400/20 bg-black/30 p-4 sm:p-3">
+                <p class="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Paste this in Terminal</p>
+                <pre class="overflow-x-auto whitespace-pre-wrap break-words text-[11px] sm:text-[10px] text-cyan-50"><code>TMP_DIR=$(mktemp -d) &amp;&amp;
+ git clone https://github.com/lakshya018/clip-view.git "$TMP_DIR" &amp;&amp;
+ cd "$TMP_DIR" &amp;&amp;
+ curl -O https://download.swift.org/swiftly/darwin/swiftly.pkg &amp;&amp;
+ installer -pkg swiftly.pkg -target CurrentUserHomeDirectory &amp;&amp;
+ yes | "$HOME/.swiftly/bin/swiftly" init --no-modify-profile &amp;&amp;
+ export PATH="$HOME/.swiftly/bin:$PATH" &amp;&amp;
+ swift build &amp;&amp;
+ mkdir -p "$HOME/ClipView.app/Contents/MacOS" &amp;&amp;
+ cp .build/debug/ClipView "$HOME/ClipView.app/Contents/MacOS/" &amp;&amp;
+ cp Info.plist "$HOME/ClipView.app/Contents/" &amp;&amp;
+ echo "ClipView built successfully and placed in ~/ClipView.app" &amp;&amp;
+ rm -rf "$TMP_DIR"</code></pre>
+            </div>
         </section>
     </main>
 
