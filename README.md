@@ -19,7 +19,7 @@
 
 ## 📦 Download & Install
 
-- [Download ClipView for macOS (.dmg)](https://lakshya018.github.io/clip-view/ClipView.dmg)
+- [Download ClipView for macOS (.pkg)](https://lakshya018.github.io/clip-view/ClipView.pkg)
 
 ---
 
